@@ -26,6 +26,7 @@ Why using Go lang over <insert another cool language here>?
 Go language has been chosen because it allows to generate a binary file
 and make deployments easier, have better concurrency mechanism
 (I'm looking at you GIL) with a simple language.
+
 Another advantage for Go was the large number of developers
 were excited about it.
 
