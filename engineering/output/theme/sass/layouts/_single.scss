@@ -1,0 +1,171 @@
+@import "core/highlight";
+
+.single {
+  &__header {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    max-width: $width-main;
+    padding: 0 1em;
+
+    &:after {
+      background: $color-silver-light;
+      content: '';
+      display: block;
+      height: 1px;
+      margin: auto;
+      max-width: $width-main / 2;
+    }
+  }
+
+  &__title {
+    font-size: 2.5em;
+    margin: 0;
+    padding: 0.75em 0;
+  }
+
+  &__infos {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 1em;
+  }
+
+  &__avatar {
+    img {
+      border: 3px solid $color-blue;
+      border-radius: 50px;
+      display: block;
+      margin: auto;
+      height: 60px;
+      width: 60px;
+    }
+  }
+
+  &__author {
+    color: $color-black;
+    margin-top: 0.5em;
+  }
+
+  &__date {
+    color: $color-gray;
+  }
+
+  &__content {
+    margin: auto;
+    max-width: $width-main;
+    padding: 0 1em;
+
+    p {
+      margin: 2em 0;
+    }
+
+    img {
+      display: block;
+      margin: 2em 0;
+      max-width: 100%;
+    }
+
+    a {
+      border-bottom: 1px solid $color-black;
+      color: $color-black;
+
+      &:hover {
+        border-color: $color-blue;
+        color: $color-blue;
+      }
+
+      &:active {
+        border-color: $color-red;
+        color: $color-red;
+      }
+    }
+
+    h3 {
+      color: $color-gray;
+    }
+
+    pre {
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  &__share {
+    margin: auto;
+    max-width: $width-main;
+    padding: 0 1em;
+
+    a {
+      @include Oswald;
+      color: $color-white;
+      display: block;
+      overflow: hidden;
+      padding: 1em;
+      text-align: center;
+      white-space: nowrap;
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      &:active {
+        opacity: 1;
+      }
+    }
+
+    i {
+      margin-right: 0.5em;
+      vertical-align: baseline;
+    }
+
+    &-item {
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+
+      &--facebook {
+        a {
+          background: $color-facebook;
+          border-radius: 3px 0 0 3px;
+        }
+      }
+
+      &--twitter {
+        a {
+          background: $color-twitter;
+          border-radius: 0 3px 3px 0;
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: 480px) {
+    &__title {
+      font-size: 1.5em;
+    }
+
+    &__content {
+      font-size: 1em;
+
+      pre {
+        font-size: 0.8125rem;
+      }
+    }
+
+    &__share i {
+      display: none;
+    }
+  }
+
+  @media all and (max-width: 330px) {
+    &__share {
+      i {
+        display: inline-block;
+        margin-right: 0;
+      }
+
+      span {
+        display: none;
+      }
+    }
+  }
+}

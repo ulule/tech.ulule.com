@@ -1,0 +1,93 @@
+.header {
+  background: $color-black-ultra;
+  // border-bottom: 2px solid $color-black;
+  // height: 60px;
+
+  &__logo {
+    display: inline-block;
+
+    a {
+      display: block;  
+      position: relative;
+      padding: 1em;
+      text-align: center;
+
+      &:hover {
+        span {
+          text-shadow: 0 0 2px $color-blue;
+        }
+      }
+
+      &:active {
+        span {
+          text-shadow: 0 0 2px $color-red;
+        }
+      }
+    }
+
+    img, span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    span {
+      @include Oswald;
+      color: $color-white;
+      font-size: 1.5em;
+      line-height: 36px;
+      margin-left: 0.5em;
+    }
+  }
+
+  &__back {
+    @include Oswald;
+    font-weight: 400;
+    // line-height: 60px;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    a {
+      background: $color-blue;
+      color: $color-white;
+      display: block;
+      padding: 1em 1em 1em 1.5em;
+
+      &:hover {
+        box-shadow: 0 0 2px $color-blue;
+
+        i {
+          left: 5px;
+        }
+      }
+
+      &:active {
+        box-shadow: none;
+        opacity: 0.9;
+      }
+    }
+
+    i {
+      display: inline-block;
+      margin-left: 0.25em;
+      font-size: 1.5em;
+      left: 0;
+      position: relative;
+      transition: all 0.2s;
+      vertical-align: middle;
+    }
+
+    span {
+      font-size: 0.8em;
+      line-height: 36px;
+    }
+  }
+
+  @media all and (max-width: 330px) {
+    &__logo, &__back {
+      display: block;
+      position: relative;
+      text-align: center;
+    }
+  }
+}

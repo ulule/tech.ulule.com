@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Ulule Engineering</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href="theme/css/style.css" rel="stylesheet" media="all">
+    <link href="https://d1yggf0lcx0ykm.cloudfront.net/apple-touch-icon.63c1116b1112.png" rel="apple-touch-icon">
+    <link href="https://d1yggf0lcx0ykm.cloudfront.net/apple-touch-icon-precomposed.37d746686d25.png" rel="apple-touch-icon-precomposed">
+    <link href="https://d1yggf0lcx0ykm.cloudfront.net/apple-touch-icon-114x114.f7a7d4822c52.png" sizes="114x114" rel="apple-touch-icon">
+    <link href="https://d1yggf0lcx0ykm.cloudfront.net/apple-touch-icon-114x114-precomposed.f7a7d4822c52.png" sizes="114x114" rel="apple-touch-icon-precomposed">
+    <link href="https://d1yggf0lcx0ykm.cloudfront.net/site/partners/ulule/favicon.ico" type="image/gif" rel="icon">
+    <!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="https://d1yggf0lcx0ykm.cloudfront.net/site/partners/ulule/favicon.ico" /><![endif]-->
+  </head>
+  <body>
+    <header class="header">
+      <span class="header__logo">
+        <a href="index.html">
+          <img src="theme/img/ulule-eyes.png" alt="Ulule" height="22" width="42"><span>Engineering</span>
+        </a>
+      </span>
+      <span class="header__back">
+        <a href="http://ulule.com">
+          <span>Back to Ulule</span><i class="icowl-enter"></i>
+        </a>
+      </span>
+    </header>
+    <main>
+      <article class="single">
+        <header class="single__header">
+          <h1 class="single__title">{{ article.title }}</h1>
+          <ul class="single__infos">
+            <li class="single__avatar">
+              {% if article.avatar %}
+                <img src="{{ article.avatar }}" alt="avatar" height="90" width="90">
+              {% else %}
+                <img src="/theme/img/{{ article.author }}.jpg" alt="avatar" height="90" width="90">
+              {% endif %}
+            </li><li class="single__author">
+              <span>{{ article.author }}</span>
+            </li><li class="single__date">
+              <date>{{ article.locale_date }}</date>
+            </li>
+          </ul>
+        </header>
+        <div class="single__content">
+          {{ article.content }}
+    <footer class="footer">
+      <ul class="footer__list">
+        <li class="footer__item">
+          <a class="footer__link footer__link--github" href="https://github.com/ulule">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-github fa-stack-2x"></i>
+            </span>
+          </a>
+        </li><li class="footer__item">
+          <a class="footer__link footer__link--facebook" href="https://facebook.com/ulule">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+          </a>
+        </li><li class="footer__item">
+          <a class="footer__link footer__link--twitter" href="https://twitter.com/ulule">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
