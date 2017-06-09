@@ -86,4 +86,4 @@ Now you want to preview it, go inside `output` folder and run:
 
     make serve
 
-Then you can open your `http://localhost:8000 <http://localhost:8000`_ and preview your article.
+Then you can open your `http://localhost:8000 <http://localhost:8000>`_ and preview your article.
