@@ -2,8 +2,10 @@ ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 BUILD_DIR = $(ROOT_DIR)/themes/ulule/static/build
 OUTPUT_DIR = $(ROOT_DIR)/output
 
+release: docker-prebuild docker-build publish
+
 publish:
-	aws s3 cp `pwd`/output s3://com.ulule.engineering/ --recursive --exclude "*.scss" --exclude ".DS_Store" --profile ulule-engineering --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
+	aws s3 cp `pwd`/output s3://ulule.engineering/ --recursive --exclude "*.scss" --exclude ".DS_Store" --profile ulule-engineering --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
 
 build:
 	pelican -s pelicanconf.py
