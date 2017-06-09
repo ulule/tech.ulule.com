@@ -49,11 +49,17 @@ Write your article in `content/`, both markdown and reStructuredText are allowed
 
 When you write an article be sure to pass down at least these parameters:
 
-1. Date syntax:
-  * Markdown: Date: YYYY-MM-DD
-  * RST: `:date:` YYYY-MM-DD
+Date syntax
 
-2. Author syntax:
+::
+
+  * Markdown: Date: YYYY-MM-DD
+  * RST: :date: YYYY-MM-DD
+
+Author syntax
+
+::
+
   * Markdown: Author: John Doe Deer
   * RST: :author: John Doe Deer
 

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "webpack --watch --progress"
+    "watch": "webpack --watch --progress",
+    "build": "webpack --config webpack.config.js --optimize-minimize"
   },
   "repository": {
     "type": "git",

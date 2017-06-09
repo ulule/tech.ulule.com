@@ -52,4 +52,3 @@ SOCIAL_LINKS = (
 )
 
 BASE_URL = 'http://ulule.engineering'
-BASE_URL = 'http://localhost:8000'
