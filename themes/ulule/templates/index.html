@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div class="posts">
+        <ul class="posts__list">
+            {% for article in articles %}
+                <li class="posts__item">
+                    <a class="posts__link" href="{{ BASE_URL }}/{{ article.url }}">
+                        <div class="posts__avatar"><img src="{{ article.avatar }}" alt="avatar" height="90" width="90">
+                        </div><ul class="posts__infos">
+                            <li>
+                                <h2 class="posts__title">{{ article.title }}</h2>
+                                </li><li>
+                                <span class="posts__author">{{ article.author }}</span>
+                                </li><li>
+                                <date class="posts__date">{{ article.locale_date }}</date>
+                            </li>
+                        </ul>
+                        <i class="posts__hovericon icowl-chevron-right"></i>
+                    </a>
+                    <ul class="posts__meta">
+                        <!--
+                        <li><a class="posts__comment" href="#"><i class="fa fa-lg fa-comment-o"></i></a></li>
+                        -->
+                        <li>
+                            <a class="posts__facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ BASE_URL }}/{{ article.url }}&display=popup"><i class="fa fa-lg fa-facebook-official"></i></a>
+                            </li><li>
+                            <a class="posts__twitter" href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fulule.engineering%2F{{ article.url }}%2F&ref_src=twsrc%5Etfw&tw_p=tweetbutton&url={{ BASE_URL }}%2F{{ article.url }}%2F&via=ulule"><i class="fa fa-lg fa-twitter"></i></a>
+                        </li>
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div id="index-footer">
+        <footer class="footer">
+            <ul class="footer__list">
+                <li class="footer__item">
+                    <a class="footer__link footer__link--github" href="https://github.com/ulule">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-github fa-stack-2x"></i>
+                        </span>
+                    </a>
+                    </li><li class="footer__item">
+                    <a class="footer__link footer__link--facebook" href="https://www.facebook.com/ulule">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-facebook fa-stack-1x"></i>
+                        </span>
+                    </a>
+                    </li><li class="footer__item">
+                    <a class="footer__link footer__link--twitter" href="https://twitter.com/ulule">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-twitter fa-stack-1x"></i>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+{% endblock %}

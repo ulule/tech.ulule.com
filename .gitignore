@@ -1,0 +1,8 @@
+__pycache__/*
+*.pyc
+.DS_Store
+themes/ulule/static/build/*
+output/*
+.env/*
+.sass-cache/*
+node_modules/*

@@ -1,0 +1,68 @@
+#index-footer .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer {
+  background: $color-silver-light;
+  margin-top: 3em;
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  &__item {
+    display: inline-block;
+    margin: 2em 0.5em;
+    vertical-align: top;
+  }
+
+  &__link {
+    color: $color-gray;
+    display: block;
+
+    &--github:hover {
+      color: $color-black;
+    }
+
+    &--facebook {
+      .fa-stack-1x {
+        left: -1px;
+        position: relative;
+        top: 2px;
+      }
+
+      &:hover {
+        color: $color-facebook;
+      }
+    }
+
+    &--twitter {
+      .fa-stack-1x {
+        left: 1px;
+        position: relative;
+        top: 1px;
+      }
+      &:hover {
+        color: $color-twitter;
+      }
+    }
+
+    &:active {
+      opacity: 0.9;
+    }
+  }
+
+  .fa-stack-1x {
+    color: $color-silver-light;
+    top: 1px;
+  }
+
+  .fa-stack-2x {
+    top: 0;
+  }
+}
