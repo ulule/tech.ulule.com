@@ -1,5 +1,16 @@
 FROM node:6.11.0
 
+RUN mkdir /temp
+RUN cd /temp && \
+    npm install npm@5.0.3 && \
+    rm -rf /usr/local/lib/node_modules && \
+    mv node_modules /usr/local/lib/ && \
+    cd ~ && \
+    rm -rf /temp
+
+RUN npm -v
+RUN node -v
+
 RUN mkdir -p /app
 
 COPY package.json /app/package.json
