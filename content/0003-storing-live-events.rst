@@ -39,8 +39,8 @@ We decided to go with `redis <https://redis.io/>`_ as a datastore for this
 application, because it has the following properties:
 
 * It has pubsub features that may be useful for live updates.
-* Durability is not super important here. If there's a power cut, we may lose data, but data in this application is not critical anyway, + dataset can be rebuilt easily and will actually rebuild itself in ~24h (24h is the longest expiration duration of all the events we need to store). So we may just completely disable durability for maximum performance.
-* We already use it a lot, so it's not a problem for us to setup more instances.
+* Durability is not super important here. If there's a power cut, we may lose data, but data in this application is not critical anyway, the dataset can be rebuilt easily and will actually rebuild itself in ~24h (24h is the longest expiration duration of all the events we need to store). So we may just completely disable durability for maximum performance.
+* We already use redis for a lot of other things, so it's not a problem for us to setup more instances.
 
 Also, the sorted set data structure in redis is a great fit for this kind of
 access pattern.
