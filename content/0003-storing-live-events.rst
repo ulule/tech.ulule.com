@@ -28,7 +28,7 @@ and queried efficiently.
 
 In particular the requirements are the following:
 
-* Some events are just counters, whereas other events are lists of objects: for example, we want the "User foo published a news X minutes ago" item to be a link to the actual news.
+* Some events are just counters, whereas other events are lists of objects: for example, we want the "User foo published a news X minutes ago" event to be an object with the link to the actual news.
 * Different event types have different expiration durations: we want the count of contributions during the latest 24h, but the name of the latest contributors only during the latest 30min.
 * Some events have a special expiration: they expire when the webpage is closed.
 
@@ -45,7 +45,7 @@ application, because it has the following properties:
 Also, the sorted set data structure in redis is a great fit for this kind of
 access pattern.
 
-Let's make a brief introduction to this data struct:
+Let's make a brief introduction to this sorted set data structure:
 
 1. It's a set of records where each record is sorted with a score.
 
@@ -59,19 +59,20 @@ the amount raised.
     > ZADD projects 532662 noob-lencyclopedie
     > ZCARD projects
     3
-    > ZRANGE projects 0 2
+    > ZRANGE projects 0 -1
     1) "noob-lencyclopedie"
     2) "noob-le-film"
     3) "noob-le-jeu-video"
 
 The ZADD command adds records to the sorted set, the ZCARD command returns the
 count of items in the sorted set, and the ZRANGE command returns a range of
-items.
+items. Items are zero-indexed, so 0 is the first item in the range, and negative
+indexes count from the end of the range, so -1 is the last item in the range.
 
 The ZRANGE command supports a large range of options to query the sorted set in
 a different order or with different pagination parameters.
 
-2. It's super simple (and efficient) to query and to delete by score range
+2. It's super simple (and efficient) to query and to delete by score range.
 
 Here we query only the items that have a score > 1000000, and then we remove the
 items that have a score < 1000000.
@@ -97,11 +98,6 @@ items that have a score < 1000000.
     (integer) 0
     > ZCARD users
     (integer) 1
-    > ZRANGE users 0 -1
-    1) "yann"
-
-(The -1 parameter in the ZRANGE command means, take all items from the first
-with index 0 to the last with index -1)
 
 Now that we know how sorted sets work, let's go back to our live events.
 
@@ -116,7 +112,7 @@ Let's try it with the `news.published` event:
 ::
 
     # Add a news.published event for the project with ID 123
-    > ZADD news.published:123 <now> '{"url":"https://..."}'
+    > ZADD news.published:123 <now> "{\"url\":\"https://...\"}"
     # Remove expired events (older that 24h)
     > ZREMRANGEBYSCORE news.published:123 -INF <now-24h>
     # List the remaining events
