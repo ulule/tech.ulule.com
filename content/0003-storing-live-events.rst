@@ -79,7 +79,7 @@ items that have a score < 1000000.
 
 ::
 
-    > ZRANGEBYSCORE project 1000000 +INF WITHSCORES
+    > ZRANGEBYSCORE projects 1000000 +INF WITHSCORES
     1) "noob-le-jeu-video"
     2) "1246852"
     > ZREMRANGEBYSCORE projects -INF 1000000
