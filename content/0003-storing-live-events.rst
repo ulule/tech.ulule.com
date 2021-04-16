@@ -15,7 +15,7 @@ last Y hours", "User foo published a news X minutes ago", "There are X users on
 the page", etc. And if a new event happens while the page is open, data is
 automatically updated "live", without refreshing.
 
-This is how the feature looks like:
+This is what the feature looks like:
 
 .. image:: img/live-events.gif
 
@@ -177,7 +177,7 @@ What doesn't work?
 
 With this design, the backend never sends a live update to the client when an
 event expires. For example, let's say a news has been published 23h59min ago,
-and we open the webpage. We see the event on the page but if no other event are
+and we open the webpage. We see the event on the page but if no more events are
 ever happening on this webpage, the server will never tell the client that the
 event has expired.
 
