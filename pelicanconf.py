@@ -16,6 +16,7 @@ TIMEZONE = 'Europe/Paris'
 # Define theme and static path to img folder
 THEME = 'themes/ulule'
 STATIC_PATHS = [
+    'img/',
     'themes/ulule/static/build/',
 ]
 
@@ -30,17 +31,17 @@ FEEDS_SAVE_AS = ''
 AUTHOR_SAVE_AS = ''
 THEME_SAVE_AS = ''
 CATEGORY_SAVE_AS = ''
-FEED_DOMAIN = None
-FEED_ATOM = None
-FEED_RSS = None
-FEED_ALL_ATOM = None
-FEED_ALL_RSS = None
-CATEGORY_FEED_ATOM = None
-CATEGORY_FEED_RSS = None
-AUTHOR_FEED_ATOM = None
-AUTHOR_FEED_RSS = None
-TAG_FEED_ATOM = None
-TAG_FEED_RSS = None
+FEED_DOMAIN = ''
+FEED_ATOM = ''
+FEED_RSS = ''
+FEED_ALL_ATOM = ''
+FEED_ALL_RSS = ''
+CATEGORY_FEED_ATOM = ''
+CATEGORY_FEED_RSS = ''
+AUTHOR_FEED_ATOM = ''
+AUTHOR_FEED_RSS = ''
+TAG_FEED_ATOM = ''
+TAG_FEED_RSS = ''
 
 DEFAULT_LANG = u'en'
 
@@ -51,4 +52,4 @@ SOCIAL_LINKS = (
     ('facebook', 'https://facebook.com/ulule'),
 )
 
-BASE_URL = 'http://ulule.engineering'
+# BASE_URL = 'http://ulule.engineering'
